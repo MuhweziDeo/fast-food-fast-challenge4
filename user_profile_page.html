@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fast-Food-Fast</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+    </head>
+    <body>
+        <div class="home">
+        <div class="navbar">
+            <div class="logo navbar-item">Fast-Food-Fast</div>
+            <div class="navbar-item">
+                <a href="index.html">Home</a>
+            </div>
+
+            <div class="navbar-item">
+                <a href="user_profile_page.html">User Dashboard</a>
+            </div>
+        
+            
+            <div class="navbar-item">
+                <a href="index.html">Logout</a>
+            </div>
+        </div>
+        <div id="order-modal" class="modal">
+            <div class="modal-content">
+                <h1>Make Order</h1>
+                <label for="">Meal-Name</label><br>
+                <input type="text"><br>
+                <label for="">Quantity</label><br>
+                <input type="text"><br>
+                <label for="">Location</label><br>
+                <input type="text"><br>
+                <input class="btn-primary" type="submit" value="Place order">
+                <button id="close" onclick="cancelorder()" class="btn-danger">Cancel</button>    
+            </div>
+        </div>
+        
+        <div id="menu-modal" class="modal">
+            <div class="modal-content">
+                <h1>Menu</h1>
+                <table class="menu-modal-table">
+                    <tr>
+                        <th>Meal-Name</th>
+                        <th>Status</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td>Burger</td>
+                        <td>Available</td>
+                        <td>4000UGs</td>
+                    </tr>
+                    <tr>
+                        <td>Pizza</td>
+                        <td>Available</td>
+                        <td>4000UGs</td>
+                    </tr>
+                    <tr>
+                        <td>Fries</td>
+                        <td>Available</td>
+                        <td>4000UGs</td>
+                    </tr>
+                    </table>
+                <button id="close-menu" onclick="closemenu()" class="btn-danger">Close</button>    
+            </div>
+        </div>
+
+
+        <div class="user-profile">
+            <div class="user-profile__info">
+                <div class="user-profile--avatar">
+                    <h1>User Profile</h1>
+                    <img src="img/users81.png" alt="user-profile-image">
+                    <div class="user-profile--details">
+                        <p class="user-profile--name">Name:Muhwezi Deo</p>
+                        <p class="user-profile--datejoined">Member Since:Jan/08/2018</p>
+                        <p class="user-profile--ordersmade">Orders Made:20</p>
+                        <button id="place-order" class="btn-primary" onclick="show_ordermodal()">Make Order</button>
+                        <button id="view-menu" onclick="displaymenu()" class="btn-primary">View Menu</button>
+                    </div>
+                </div>
+                <div class="user-orders">
+                    <h1>Orders</h1>
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Meal Ordered</th>
+                            <th>Delivery-Status</th>
+                        </tr>
+                        <tr>
+                            <td>12/07/2017</td>
+                            <td>Burger</td>
+                            <td>Successful</td>
+                        </tr>
+                        <tr>
+                            <td>11/07/2017</td>
+                            <td>Burger</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>11/07/2017</td>
+                            <td>Burger</td>
+                            <td>UnSuccessful</td>
+                        </tr>
+                        <tr>
+                            <td>11/07/2017</td>
+                            <td>Burger</td>
+                            <td>Successful</td>
+                        </tr>
+                        <tr>
+                            <td>11/07/2017</td>
+                            <td>Burger</td>
+                            <td>Successful</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    </body>
+</html>

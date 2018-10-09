@@ -1,0 +1,478 @@
+*{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+/*buttons*/
+.btn-primary{
+display: inline-block;
+background-color: green;
+border: none;
+cursor: pointer;
+color: white;
+text-align: center;
+margin:4px 3px;
+padding: 14px;
+border-radius: 12px;
+}
+.btn-danger{
+display: inline-block;
+background-color: red;
+border: none;
+cursor: pointer;
+color: white;
+text-align: center;
+margin:4px 3px;
+padding: 14px;
+border-radius: 12px;
+}
+a{
+text-decoration: none;
+/* color: white; */
+}
+.home{
+background:linear-gradient(to right bottom, rgba(0, 110, 255, 0.808), blueviolet),url(../img/pexels-photo-70497.jpeg);
+background-position: left;
+background-repeat: repeat-x;
+height: 95vh;
+}
+/*navbar*/
+.navbar .logo{
+border: none ;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+.navbar{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr ;
+/* background:linear-gradient(to right bottom, rgba(0, 110, 255, 0.808), blueviolet); */
+background-color: transparent;
+grid-column-gap: 10px;
+color:black;
+padding-top: 5px;
+padding-bottom: 2px;
+color: white;
+cursor: pointer;
+}
+.navbar-item {
+/* border: 2px solid black; */
+text-align: center;
+text-transform: uppercase;
+font-style: italic;
+font-weight: 700;
+padding-top: 5px;
+}
+.navbar-item a{
+text-decoration: none;
+color: white;
+}
+.navbar-item:hover{
+background-color:grey;
+}
+/*intro page*/
+.intro{
+/* display: block; */
+text-align: center;
+/* background: url(../img/pexels-photo-70497.jpeg); */
+background-position: left;
+background-repeat: repeat-x;
+height: 95vh;
+width: 100%;
+font-size: 40px;
+position: relative;
+
+margin: 0 0 ;
+}
+.intro__text{
+position: absolute;
+top:10%;
+right: 30%;
+color: white;
+/* animation: intro 1s ease-in ; */
+font-style: italic;
+}
+.intro .intro__text button{
+background-color: blue;
+border: 2px solid black;
+color:white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 4px;
+animation: intro-button 2s ease-in;
+/* box-shadow: 0px 0px 20px #4CAF50; */
+}
+.intro .intro__text button:hover{
+box-shadow: 0px 0px 20px #ffffff;
+transform: scale(1.1);
+background:#ffffff;
+color: black;
+}
+.intro .intro__text .menu{
+font-size: 30px;
+text-align: center;
+margin-top: 10px;
+}
+.intro .intro__text .menu table{
+border:2px solid black;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+table th, table td{
+border: 2px solid salmon;
+padding: 8px;
+}
+.intro .intro__text .menu table th{
+background: rgba(0, 128, 0, 0.473);
+color: black;
+font-weight: bold;
+}
+/* forms */
+input[type=text], input[type=password]{
+width: 50%;
+margin-top: 20px;
+margin-bottom: 20px;
+padding-top: 5px;
+padding-bottom: 5px;
+font-size: 20px;
+}
+input[type=submit]{
+background: green;
+color: white;
+}
+label{
+font-size: 20px;
+}
+/* signup form */
+.signup{
+margin: 20px auto;
+width:70%;
+padding: 10px 20px;
+font-size: 20px;
+text-align: center;
+color: #ffffff;
+font-weight: 100;
+/* border: 2px solid black; */
+/* height: 60vh; */
+}
+.signup label{
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.signup .signupform h1{
+font-style: italic;
+margin-bottom: 30px;
+}
+.signup .signupform .btn-primary{
+width: 50%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+color: white;
+text-decoration: none;
+}
+.signup .signupform a{
+
+text-decoration: underline;
+color:yellow;
+}
+/* loginform */
+.login{
+margin: 20px auto;
+width: 100%;
+text-align: center;
+color: white;
+}
+.login .loginform h1{
+font-style: italic;
+margin-bottom: 30px;
+}
+.login .loginform input{
+width: 30%;
+}
+.login .loginform a{
+    color: yellow;
+    font-weight: 700;
+}
+.login .loginform .btn-primary{
+width: 30%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+/*userprofile*/
+.user-profile{
+/* display: block; */
+/* margin: 20px auto; */
+width: 100%;
+color:  white;
+}
+.user-profile h1{
+color: black;
+}
+.user-profile .user-profile__info{
+display: grid;
+grid-template-columns: 2fr 5fr;
+font-size: 20px;
+grid-column-gap: 30px;
+}
+.user-profile img{
+width: 20%;
+}
+.user-profile .user-profile__info .user-profile--avatar input{
+width:90%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.user-orders table{
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+.user-orders table th{
+background: greenyellow;
+}
+.user-orders table th,.user-orders table td{
+border: 2px solid grey;
+padding: 8px;
+}
+/* order-template */
+.order{
+display: grid;
+width: 100%;
+grid-template-columns: 2fr 1fr;
+grid-column-gap: 5px;
+overflow-x: hidden;
+color: white;
+}
+.order h1{
+    color: green;
+}
+.order-form{
+width: 100%;
+padding-right: 10px;
+}
+.orderform{
+width: 150%;
+/* float: right; */
+}
+.order .orderform .btn-primary{
+width: 30%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+.order-menu{
+width: 100%;
+float:right;
+}
+.order .order-menu table{
+border:2px solid black;
+width: 100%;
+text-align: center;
+border-collapse: collapse;
+}
+/* admin dashboard */
+.accordion{
+width: 100%;
+padding: 0;
+margin: 0;
+list-style-type: none;
+}
+.accordion-header{
+display: block;
+padding: 15px 20px;
+background: rgba(43, 46, 226, 0.808);
+color: #ffffff;
+text-decoration: none;
+text-transform: uppercase;
+margin-bottom: 5px;
+}
+.accordion p{
+margin: 0 0 20px 0;
+}
+.accordion-content{
+padding: 0;
+height: 0;
+overflow: hidden;
+}
+.accordion-content:target{
+height: auto;
+padding: 10px;
+}
+#food-items-table{
+    width: 100%;
+ 
+}
+
+#food-items-table tr td button{
+    width: 50%;
+}
+
+.modal, .modalupdate{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height:100%;
+    z-index: 1;
+    background:blueviolet;
+    background: rgba(0,0,0,0.4);
+    left:0;
+    top:0;
+    padding: 100px;
+}
+
+.modal-content{
+    display: block;
+    margin:20px auto;
+    width: 80%;
+    border: 4px solid black;
+    padding: 20px;
+    background: blue;
+    color: white;
+    
+    
+}
+
+
+
+
+.modal .modal-content .btn-primary{
+    width: 50%;
+}
+
+.modal .modal-content input{
+    width: 100%;;
+}
+#editmodal .modal-content{
+    background: blueviolet;
+}
+.menu-modal-table{
+    width: 100%;
+}
+
+select{
+    background: blue;
+    color: white;
+    border: 10px solid  blue;
+    font-size: 16px;
+
+}
+
+option{
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+/*responsive design*/
+@media screen and (max-width: 480px) {
+.home{
+    background-position: cover;
+    height: 100%;
+    width: 100%;
+}
+.navbar{
+grid-template-columns: 1fr;
+grid-row-gap: 10px;
+}
+.intro{
+-webkit-clip-path:none;
+clip-path:none;
+font-size: 16px;
+height: 80vh;
+background-size: cover;
+
+}
+.intro__text{
+top:1%;
+right: 10%;
+}
+.intro .intro__text button{
+font-size: 8px;
+}
+.intro .intro__text table{
+    display: block;
+    margin-left: 10px;
+}
+.intro .intro__text .menu{
+font-size: 16px;
+float: right;
+
+}
+.user-profile{
+grid-template-columns: 1fr;
+}
+.user-profile .user-profile__info{
+
+grid-template-columns:1fr;
+
+}
+input[type=text], input[type=password]{
+width: 100%;
+
+}
+.signup{
+width: 100%;
+font-size: 16px;
+}
+.signup .signupform .btn-primary{
+width: 100%;
+}
+.login .loginform input{
+width: 100%;
+}
+.order{
+grid-template-columns: 1fr;
+}
+.orderform{
+width: 100%;;
+}
+
+#food-items-table tr td button{
+    width: 100%;
+}
+.modal, .modalupdate{
+    width: 100%;
+    padding: 10px;
+}
+
+}
+@media screen and (min-width: 768px){
+.home{
+        /* background: url(../img/pexels-photo-70497.jpeg); */
+        background:linear-gradient(to right bottom, rgb(0, 110, 255), rgba(137, 43, 226, 0.473)),url(../img/pexels-photo-70497.jpeg);
+        background-position: cover;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 100vh;
+ }
+.intro{
+/* -webkit-clip-path:none; */
+/* clip-path:none; */
+font-size: 16px;
+/* height: 95vh; */
+background-image: none;
+
+}
+
+
+}
