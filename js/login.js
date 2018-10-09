@@ -23,16 +23,21 @@ window.onload=function login(){
             if (response['message'] == 'You have been Verified' && usernameData=='super'){
                 alert(response['message'])
                 redirect:window.location.replace('../admin_dashboard.html')
+            token=response['token'];
+            localStorage.setItem('access-token',token);
             }
             else if (response['message'] == 'You have been Verified'){
                 alert(response['message'])
                 redirect:window.location.replace('../user_profile_page.html')
+            token=response['token'];
+            localStorage.setItem('access-token',token);
             }
             else{
                 alert(response['message'])
                 redirect:window.location.replace('../login.html')
-            }
-    }); }};
+            };
+            
+}) }};
 
 
 
