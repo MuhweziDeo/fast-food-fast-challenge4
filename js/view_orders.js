@@ -10,15 +10,13 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/orders',{
 .then((res) => { return res.json() })
 .then(response=>{
  var orders=[];
-// console.log(orders)
  for (const [key, value] of Object.entries(response)) {
-    // console.log(key, value);
     for (var i = 0; i <value.length; i++) {
-        // console.log(value[i])
         orders.push(value[i])
      
     };
   };
+  
 function ui(value){
  for (var i = 0;i <value.length; i++){
     console.log(value)
@@ -26,18 +24,17 @@ function ui(value){
 
         content.innerHTML+= `
         <div>
-        <table>
-
-        <tr>
-        <th>orderId</th>
-        <th>user_id<th>
-        </tr>
-        
-        <tr>
-        <td> ${value[i].orderid}</td>
-        <td> ${value[i].user_id}</td>
-        <tr>
-        </table>
+        <h2>Order ${value[i].orderid} </h1>
+        <p>orderID: ${value[i].orderid}</p>
+        <p>userID: ${value[i].user_id}</p>
+        <p>Meal: ${value[i].meal_name}</p>
+        <p>order-status: ${value[i].status}</p>
+        <p>quantity:${value[i].quantity}</p>
+        <p>location:${value[i].location}</p>
+        <p> Date:${value[i].order_date}</p>
+        <button class='btn btn-primary'>Accept</button>
+        <button class='btn btn-danger'>Reject</button>
+     
         </div> 
         
         `  
