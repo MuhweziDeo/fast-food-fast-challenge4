@@ -13,13 +13,11 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/orders',{
  for (const [key, value] of Object.entries(response)) {
     for (var i = 0; i <value.length; i++) {
         orders.push(value[i])
-     
     };
   };
-  
+
 function ui(value){
  for (var i = 0;i <value.length; i++){
-    console.log(value)
         let content = document.getElementById('result')
 
         content.innerHTML+= `
@@ -32,13 +30,31 @@ function ui(value){
         <p>quantity:${value[i].quantity}</p>
         <p>location:${value[i].location}</p>
         <p> Date:${value[i].order_date}</p>
-        <button class='btn btn-primary'>Accept</button>
-        <button class='btn btn-danger'>Reject</button>
+        <button class='btn btn-primary' id='${value[i].orderid}'>Accept</button>
+        <button class='btn btn-danger' id='reject'>Reject</button>
      
         </div> 
         
-        `  
+        ` 
     };
 };
 ui(orders);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
