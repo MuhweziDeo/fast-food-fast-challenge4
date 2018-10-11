@@ -17,20 +17,9 @@ fetch(url,{
         orders.push(value[i])
         var id=value[i].orderid
         urls.push(`https://fast-foods-api-main.herokuapp.com/api/v2/orders/${id}`);
-    for(i =0; i<id.length; i++){
-        console.log(i)
-    }
-    
-    };
-  };
-
-
-
-// outputs api data to frontend
-function ui(value){
- for (var i = 0;i <value.length; i++){
         let content = document.getElementById('result')
         // console.log(urls)
+        // url=`https://fast-foods-api-main.herokuapp.com/api/v2/orders/${value[i].orderid}`
         content.innerHTML+= `
         <div>
         <h2>Order ${value[i].orderid} </h1>
@@ -45,11 +34,10 @@ function ui(value){
         <input class="btn btn-danger" type='submit' value="reject" id='${value[i].orderid}'>
         </form>
         </div>    
-        `     
-    };  
-};
-ui(orders);
-
+        `
+    };
+    
+  };
 });
 
 
