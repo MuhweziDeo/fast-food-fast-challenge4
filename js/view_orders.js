@@ -30,9 +30,14 @@ function ui(value){
         <p>quantity:${value[i].quantity}</p>
         <p>location:${value[i].location}</p>
         <p> Date:${value[i].order_date}</p>
-        <button class='btn btn-primary' id='${value[i].orderid}'>Accept</button>
-        <button class='btn btn-danger' id='reject'>Reject</button>
-     
+        <form id="accept">
+        <input class="btn btn-primary" type='submit' value="accept">
+        </form>
+
+        <form id="reject">
+        <input class="btn btn-danger" type='submit' value="reject">
+        </form>
+        
         </div> 
         
         ` 
