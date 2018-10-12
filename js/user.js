@@ -7,12 +7,11 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
     }
 }).then(res=>res.json()
 ).then(response=>{
-    console.log(response)
+ 
     for(const[key,value] of Object.entries(response)){
         for(var i=0;i<value.length;i++){
             console.log(value[i].orderid)
             let content=document.getElementById('user-orderz')
-            console.log(content)
             content.innerHTML+=`
             <table>
                             <tr>
@@ -75,3 +74,32 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/menu', {
     };
 
 });
+
+// post an order
+document.getElementById('order-form').addEventListener('submit',placeOrder)
+function placeOrder(event){
+    event.preventDefault()
+   
+    var mealNameData = document.getElementById('meal_name').value;
+    var quantityData = document.getElementById('quantity').value;
+    var locationData = document.getElementById('location').value;
+
+   var orderData={
+        meal:mealNameData,
+        quantity:quantityData,
+        location:locationData
+    }
+
+    fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
+        method:'POST',
+        headers:{
+            'content-Type':'application/json',
+            Authorization:`Bearer ${token}`
+        },
+        body:JSON.stringify(orderData)
+    }).then(res=>res.json()
+    ).then(response=>{
+        console.log(response)
+        alert(response['meaasge'])
+    })
+}
