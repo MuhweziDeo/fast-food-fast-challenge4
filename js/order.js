@@ -24,5 +24,47 @@ fetch(url,{
         <button class="btn-primary" id="accept">Accept</button>
         <button class="btn-danger" id="reject">Reject</button>
         `;
-    }
+    };
+
+document.getElementById('accept').addEventListener('click',accept_order)
+function accept_order(){
+accept_data={
+    status:'accepted'
+}
+fetch(url,{
+    method:'PUT',
+    headers:{
+        'content-Type':'application/json',
+        Authorization:`Bearer ${token}`
+
+    },
+    body:JSON.stringify(accept_data)
+}).then(res=>res.json())
+.then(response=>{
+    alert(response['message'])
+    window.location.href = "admin_dashboard.html"
+})
+};
+
+document.getElementById('reject').addEventListener('click',reject_order)
+function reject_order(){
+reject_data={
+    status:'rejected'
+}
+fetch(url,{
+    method:'PUT',
+    headers:{
+        'content-Type':'application/json',
+        Authorization:`Bearer ${token}`
+
+    },
+    body:JSON.stringify(reject_data)
+}).then(res=>res.json())
+.then(response=>{
+    alert(response['message'])
+    window.location.href = "admin_dashboard.html"
+})
+}
+
+
 });
