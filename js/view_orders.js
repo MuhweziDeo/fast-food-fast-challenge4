@@ -11,31 +11,41 @@ fetch(url,{
 })
 .then((res) => { return res.json() })
 .then(response=>{
-
  for (const [key, value] of Object.entries(response)) {
     for (var i = 0; i <value.length; i++) {
+        // console.log(value[i])
+        orders=value[i]
+       
         var id=value[i].orderid
-        urls.push(`https://fast-foods-api-main.herokuapp.com/api/v2/orders/${id}`);
-        let content = document.getElementById('result')
-        // console.log(urls)
-        url=`https://fast-foods-api-main.herokuapp.com/api/v2/orders/${value[i].orderid}`
-        content.innerHTML+= `
-        <div>
-        <h2>Order ${value[i].orderid} </h1>
-        <p><a href="${url}" id='${value[i].orderid}'> orderID: ${value[i].orderid}<a/></p>
-        <p>order-status: ${value[i].status}</p>
-    
-        </div>    
-        `
-    };
-    
-  };
 
+        let content = document.getElementById('result')
+
+        content.innerHTML+= `
+        <div id="${id}">
+
+        <h2 id="${id}" >Order ${value[i].orderid} </h2>
+        <p> orderID: ${value[i].orderid}</p>
+        <p>order-status: ${value[i].status}</p>
+        </div>    
+        `;
+      
+      
+    };
+
+
+ var results= document.getElementById('result')
+    results.onclick=e=>{       
+        
+        // window.location.href = "login.html"
+       var id= e.target.attributes.getNamedItem("id").value;
+        // console.log(c);
+        localStorage.setItem('orderid',id)
+        window.location.href = "login.html"
+    }
+  };
 
 });
     
-   
-
 
 
 
