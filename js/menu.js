@@ -69,7 +69,6 @@ fetch(url, {
          
         `;
 
-
             };
             var results = document.getElementById('menu')
             results.onclick = e => {
