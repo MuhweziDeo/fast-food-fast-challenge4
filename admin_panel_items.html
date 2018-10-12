@@ -48,28 +48,18 @@
                     <div id="add-modal" class="modal">
                         <div class="modal-content">
                             <h1>Add Fast-Food</h1>
-                            <label for="">Meal-Name</label><br>
-                            <input type="text"><br>
-                            <label for="">Price</label><br>
-                            <input type="text"><br>
-                            <input class="btn-primary" type="submit" value="ADD">
-                            <button id="close" class="btn-danger" onclick="close_addmodal()">Cancel</button>
+                            <form id="menu-form">
+                                    <label for="">Meal-Name</label><br>
+                                    <input type="text" id="meal_name"><br>
+                                    <label for="" >Price</label><br>
+                                    <input type="text" id="price"><br>
+                                    <label for="" >Meal_status</label><br>
+                                    <input type="text" id="status"><br>
+                                    <input class="btn-primary" type="submit" value="update">
+                                    <button id="close" class="btn-danger" onclick="close_addmodal()">Cancel</button>
+    
+                            </form>
                             
-
-                        </div>
-
-                    </div>
-
-                    <div id="editmodal" class="modalupdate">
-                        <div class="modal-content">
-                            <h1>Edit Fast-Food</h1>
-                            <label for="">Meal-Name</label><br>
-                            <input type="text"><br>
-                            <label for="">Price</label><br>
-                            <input type="text"><br>
-                            <input class="btn-primary" type="submit" value="UPDATE">
-                            <button id="close2" class="btn-danger" onclick="closemodal()">Cancel</button>
-
                         </div>
 
                     </div>
@@ -79,49 +69,10 @@
                                 
                        </div>
                     </div>
-                  
-                    <!-- <table id="food-items-table">
-                        <tr>
-                            <th>Meal Name</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-
-                        </tr>
-                        <tr>
-
-                            <td>Burger</td>
-                            <td><button id='editmodal-btn' class="btn-primary" onclick="showmodal()">Edit</button></td>
-                            <td><button class="btn-danger">Delete</button></td>
-                        </tr>
-                        <tr>
-
-                            <td>Pizza</td>
-                            <td><button id='editmodal-btn2' class="btn-primary" onclick="showmodal()" >Edit</button></td>
-                            <td><button class="btn-danger">Delete</button></td>
-                        </tr>
-                        <tr>
-
-                            <td>Fries</td>
-                            <td><button id='editmodal-btn3' class="btn-primary" onclick="showmodal()" >Edit</button></td>
-                            <td><button class="btn-danger">Delete</button></td>
-                        </tr>
-                        <tr>
-
-                            <td>Soda</td>
-                            <td><button id='editmodal-btn4' class="btn-primary" onclick="showmodal()">Edit</button></td>
-                            <td><button class="btn-danger">Delete</button></td>
-                        </tr>
-                        <tr>
-
-                            <td>Burger</td>
-                            <td><button id='editmodal-btn5' class="btn-primary" onclick="showmodal()" >Edit</button></td>
-                            <td><button class="btn-danger">Delete</button></td>
-                        </tr>
-                    </table>
-                    <button id="add-btn" class="btn-primary" onclick="addfastfood()">Add New Food Item</button>
-                </div> -->
+                <button id="add-btn" class="btn-primary" onclick="addfastfood()">Add New Food Item</button>
             </div>
         </div>
+        <script src="js/main.js"></script>
         <script src="js/menu.js"></script>
     </div>
 </body>
