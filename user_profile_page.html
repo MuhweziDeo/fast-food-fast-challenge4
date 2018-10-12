@@ -27,15 +27,17 @@
         </div>
         <div id="order-modal" class="modal">
             <div class="modal-content">
+                <form id="order-form">
                 <h1>Make Order</h1>
                 <label for="">Meal-Name</label><br>
-                <input type="text"><br>
+                <input type="text" required id="meal_name"><br>
                 <label for="">Quantity</label><br>
-                <input type="text"><br>
+                <input type="text" required id="quantity"><br>
                 <label for="">Location</label><br>
-                <input type="text"><br>
+                <input type="text" required id="location"><br>
                 <input class="btn-primary" type="submit" value="Place order">
-                <button id="close" onclick="cancelorder()" class="btn-danger">Cancel</button>    
+                <button id="close" onclick="cancelorder()" class="btn-danger">Cancel</button>  
+            </form>  
             </div>
         </div>
         
@@ -43,7 +45,7 @@
             <div class="modal-content">
                 <h1>Menu</h1>
                 <div id="menu">
-                    
+
                 </div>
                 <button id="close-menu" onclick="closemenu()" class="btn-danger">Close</button>    
             </div>
