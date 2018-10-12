@@ -40,7 +40,7 @@ fetch(url,{
        var id= e.target.attributes.getNamedItem("id").value;
         // console.log(c);
         localStorage.setItem('orderid',id)
-        window.location.href = "login.html"
+        window.location.href = "orders.html"
     }
   };
 
