@@ -39,10 +39,8 @@ fetch(url, {
         return res.json()
     })
     .then(response => {
-        console.log(response)
         for (const [key, value] of Object.entries(response)) {
             for (var i = 0; i < value.length; i++) {
-                console.log(value[i])
                 let content = document.getElementById('menu')
 
                 content.innerHTML += `
@@ -72,10 +70,7 @@ fetch(url, {
             };
             var results = document.getElementById('menu')
             results.onclick = e => {
-
-                // window.location.href = "login.html"
                 var id = e.target.attributes.getNamedItem("id").value;
-                // console.log(c);
                 localStorage.setItem('meal_id', id)
                 window.location.href = "menu.html"
             }
