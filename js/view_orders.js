@@ -21,7 +21,7 @@ fetch(url,{
         let content = document.getElementById('result')
 
         content.innerHTML+= `
-        <div id="${id}">
+        <div class="all-orders" id="${id}">
         <p> orderID: ${value[i].orderid}</p>
         <p>order-status: ${value[i].status}</p>
         <button class="btn-primary" id="${id}" >View More Details</button>
