@@ -276,6 +276,14 @@ color: white;
     margin-bottom: 20px;
 
 }
+
+#order-details{
+    font-size: 30px;
+}
+
+#order-details p{
+    padding: 10px;
+}
 .order h1{
     color: green;
 }
