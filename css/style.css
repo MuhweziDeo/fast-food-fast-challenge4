@@ -221,6 +221,7 @@ background:linear-gradient(to right bottom, rgba(0, 110, 255, 0.808), blueviolet
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
+height: 100vh;
 }
 .user-profile h1{
 color: black;
@@ -264,9 +265,16 @@ grid-column-gap: 5px;
 overflow-x: hidden;
 color: white;
 }
-.all-orders{
+
+.orders #result{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#result .all-orders{
     color: white;
     margin-bottom: 20px;
+
 }
 .order h1{
     color: green;
