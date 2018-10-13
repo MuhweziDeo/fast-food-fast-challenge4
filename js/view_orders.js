@@ -22,10 +22,9 @@ fetch(url,{
 
         content.innerHTML+= `
         <div id="${id}">
-
-        <button class="btn-primary" id="${id}" >View Details Order ${value[i].orderid} </button>
         <p> orderID: ${value[i].orderid}</p>
         <p>order-status: ${value[i].status}</p>
+        <button class="btn-primary" id="${id}" >View More Details</button>
         </div>    
         `;
       
