@@ -443,6 +443,9 @@ float: right;
 }
 .user-profile{
 grid-template-columns: 1fr;
+background-position: cover;
+width: 100%;
+color: black;
 }
 .user-profile .user-profile__info{
 
@@ -481,7 +484,6 @@ width: 100%;;
 }
 @media screen and (min-width: 768px){
 .home{
-        /* background: url(../img/pexels-photo-70497.jpeg); */
         background:linear-gradient(to right bottom, rgb(0, 110, 255), rgba(137, 43, 226, 0.473)),url(../img/pexels-photo-70497.jpeg);
         background-position: cover;
         background-size: 100%;
@@ -489,10 +491,8 @@ width: 100%;;
         height: 100vh;
  }
 .intro{
-/* -webkit-clip-path:none; */
-/* clip-path:none; */
+
 font-size: 16px;
-/* height: 95vh; */
 background-image: none;
 
 }
