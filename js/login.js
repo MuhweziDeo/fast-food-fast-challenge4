@@ -25,12 +25,14 @@ window.onload=function login(){
                 redirect:window.location.replace('../admin_dashboard.html')
             token=response['token'];
             localStorage.setItem('access-token',token);
+            localStorage.setItem('logged_in_user',usernameData);
             }
             else if (response['message'] == 'You have been Verified'){
                 alert(response['message'])
                 redirect:window.location.replace('../user_profile_page.html')
             token=response['token'];
             localStorage.setItem('access-token',token);
+            localStorage.setItem('logged_in_user',usernameData);
             }
             else{
                 alert(response['message'])
