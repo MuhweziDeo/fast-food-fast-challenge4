@@ -11,6 +11,12 @@ fetch(url,{
 })
 .then((res) => { return res.json() })
 .then(response=>{
+    var user=localStorage.getItem('logged_in_user')
+    console.log(user)
+    let loggedInUser=document.getElementById('current_user')
+    loggedInUser.innerHTML=`
+    <p>Current User: ${user}</p>
+    `;
  for (const [key, value] of Object.entries(response)) {
     for (var i = 0; i <value.length; i++) {
         // console.log(value[i])
@@ -27,6 +33,7 @@ fetch(url,{
         <button class="btn-primary" id="${id}" >View More Details</button>
         </div>    
         `;
+     
       
       
     };

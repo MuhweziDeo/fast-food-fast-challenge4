@@ -23,6 +23,12 @@ function add_meal(event) {
 
         }).then(res => res.json())
         .then(response => {
+            var user=localStorage.getItem('logged_in_user')
+            console.log(user)
+            let loggedInUser=document.getElementById('current_user')
+            loggedInUser.innerHTML=`
+            <p>Current User: ${user}</p>
+            `;
             alert(response['message']);
             window.location.href = "admin_panel_items.html"
         });
@@ -39,6 +45,12 @@ fetch(url, {
         return res.json()
     })
     .then(response => {
+        var user=localStorage.getItem('logged_in_user')
+        console.log(user)
+        let loggedInUser=document.getElementById('current_user')
+        loggedInUser.innerHTML=`
+        <p>Current User: ${user}</p>
+        `;
         for (const [key, value] of Object.entries(response)) {
             for (var i = 0; i < value.length; i++) {
                 let content = document.getElementById('menu')

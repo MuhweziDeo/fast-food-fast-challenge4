@@ -7,6 +7,12 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
     }
 }).then(res=>res.json()
 ).then(response=>{
+    var user=localStorage.getItem('logged_in_user')
+    console.log(user)
+    let loggedInUser=document.getElementById('current_user')
+    loggedInUser.innerHTML=`
+    <p>Current User: ${user}</p>
+    `;
    if (response['message']=='You havent placed any orders yet'){
     let content=document.getElementById('user-orderz')
     content.innerHTML+=`
