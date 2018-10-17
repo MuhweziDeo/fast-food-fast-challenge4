@@ -14,8 +14,7 @@ https://github.com/MuhweziDeo/fast-food-fast-challenge4/tree/develop
 
 #  The App is hosted on 
 
-https://fast-foods-api-main.herokuapp.com/
-
+https://fast-foods-256.herokuapp.com/
 # Features
 - Users can signup/create accounts
 - Authenticated users can login into the system
