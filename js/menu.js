@@ -62,8 +62,8 @@ fetch(url, {
                             <th> Name</th>
                             <th> Price</th>
                             <th>Status</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Manage Meal</th>
+                    
 
                         </tr>
                         <tr>
@@ -71,8 +71,7 @@ fetch(url, {
                             <td>${value[i].meal_name}</td>
                             <td>${value[i].price}</td>
                             <td>${value[i].meal_status}</td>
-                            <td><button id='${value[i].meal_id}' class="btn-primary">Edit</button></td>
-                            <td><button  id='${value[i].meal_id}' class="btn-danger">Delete</button></td>
+                            <td><button id='${value[i].meal_id}' class="btn-primary">Manage</button></td>
                         </tr>
                         <tr>
          </table>

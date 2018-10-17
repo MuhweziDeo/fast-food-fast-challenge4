@@ -29,7 +29,6 @@ function update_meal(event) {
 document.getElementById('delete').addEventListener('click', delete_meal)
 function delete_meal(event) {
     event.preventDefault()
-    console.log('hhhh')
     fetch(`https://fast-foods-api-main.herokuapp.com/api/v2/meal/${id}`, {
             method: 'DELETE',
             headers: {
