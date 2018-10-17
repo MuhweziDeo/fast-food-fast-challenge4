@@ -117,5 +117,6 @@ function placeOrder(event){
     ).then(response=>{
         console.log(response)
         alert(response['meaasge'])
+        window.location.href = "user_profile_page.html"
     })
 }
