@@ -7,7 +7,15 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
     }
 }).then(res=>res.json()
 ).then(response=>{
- 
+   if (response['message']=='You havent placed any orders yet'){
+    let content=document.getElementById('user-orderz')
+    content.innerHTML+=`
+    <h2>You Havent Placed Any Orders Yet</h2>
+    <p>Click Make Order to Get started Now</p>
+    `;
+
+   }
+   else{
     for(const[key,value] of Object.entries(response)){
         for(var i=0;i<value.length;i++){
             console.log(value[i].orderid)
@@ -36,6 +44,8 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
        
 
     }
+   }
+  
 })
 
 // get menu
