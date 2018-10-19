@@ -51,6 +51,14 @@ fetch(url, {
         loggedInUser.innerHTML=`
         <p>Current User: ${user}</p>
         `;
+        if (response['message']=='No Meals available yet on the Menu'){
+             let content = document.getElementById('menu')
+
+                content.innerHTML=`
+                    <h2>No Meals available yet</h2>
+                `
+        }
+        else {
         for (const [key, value] of Object.entries(response)) {
             for (var i = 0; i < value.length; i++) {
                 let content = document.getElementById('menu')
@@ -85,6 +93,6 @@ fetch(url, {
                 localStorage.setItem('meal_id', id)
                 window.location.href = "menu.html"
             }
-        };
+        }};
 
     });
