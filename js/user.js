@@ -124,7 +124,7 @@ function placeOrder(event){
     }).then(res=>res.json()
     ).then(response=>{
         console.log(response)
-        alert(response['meaasge'])
+        alert(response['message'])
         window.location.href = "user_profile_page.html"
     })
 }
