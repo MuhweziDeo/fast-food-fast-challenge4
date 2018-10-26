@@ -11,6 +11,19 @@ fetch(url,{
 })
 .then((res) => { return res.json() })
 .then(response=>{
+    if (response['message']=="Not enough segments"){
+        window.location.replace('../login.html')
+    
+       }
+       else if(response['message']=="Signature has expired"){
+        alert('Session Has Expired Please Login Again')
+        window.location.replace('../login.html')
+       }
+    else if(response['message']=='You cant preform this action because you are unauthorised'){
+        window.location.replace('../login.html')
+        
+    }
+    else{
     var user=localStorage.getItem('logged_in_user')
     let loggedInUser=document.getElementById('current_user')
     loggedInUser.innerHTML=`
@@ -59,7 +72,8 @@ else{
             localStorage.setItem('orderid',id)
             window.location.href = "orders.html"
         }
-      };
+      }}
+      ;
     
 }
  
