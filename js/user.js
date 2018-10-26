@@ -28,6 +28,7 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
    }
    else if(response['message']=="Signature has expired"){
     alert('Session Has Expired Please Login Again')
+    window.location.replace('../login.html')
    }
    else{
     for(const[key,value] of Object.entries(response)){
