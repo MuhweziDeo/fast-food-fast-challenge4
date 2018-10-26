@@ -7,6 +7,7 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
     }
 }).then(res=>res.json()
 ).then(response=>{
+    console.log(response['message'])
     var user=localStorage.getItem('logged_in_user')
     console.log(user)
     let loggedInUser=document.getElementById('current_user')
@@ -20,6 +21,13 @@ fetch('https://fast-foods-api-main.herokuapp.com/api/v2/users/orders',{
     <p>Click Make Order to Get started Now</p>
     `;
 
+   }
+   else if (response['message']=="Not enough segments"){
+    window.location.replace('../login.html')
+
+   }
+   else if(response['message']=="Signature has expired"){
+    alert('Session Has Expired Please Login Again')
    }
    else{
     for(const[key,value] of Object.entries(response)){
