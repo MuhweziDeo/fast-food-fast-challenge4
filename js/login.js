@@ -1,58 +1,40 @@
 
 window.onload=function login(){
-    document.getElementById('login').addEventListener('submit', login_user)
-    function login_user(event){
+    document.getElementById('login').addEventListener('submit',
+    loginUser=(event)=>{
         event.preventDefault()
-        var usernameData=document.getElementById('username').value;
-        var passwordData=document.getElementById('password').value;
-   
-        var loginData={
-            username:usernameData,
-            password:passwordData
-        };
+        let msg=document.getElementById('errorMessage')
+        let usernameData=document.getElementById('username').value;
+        let passwordData=document.getElementById('password').value;      
+        let loginData={username:usernameData,password:passwordData};
+ 
+                const loginResponse= post('https://fast-foods-api-main.herokuapp.com/api/v2/auth/login',loginData,'')
+                .then(data=>{ 
+                if(data['message']==`username ${usernameData} deosnt exist`){
+                    msg.innerHTML=`username ${usernameData} deosnt exist`
+
+                }
+                else if(data['message']=="password verification failed"){
+                    msg.innerHTML='Invalid password try again';
     
-        fetch('https://fast-foods-api-main.herokuapp.com/api/v2/auth/login',{
-            method:'post',
-            headers:{
-                'content-Type':'application/json'
-            },
-            body:JSON.stringify(loginData)
+                }
+                else if(data['message']=='You have been Verified' || usernameData=='super'){
+                    localStorage.setItem('token',data['token'])
+                    localStorage.setItem('username',usernameData)
+                    window.location.href='admin_dashboard.html'
+                }
+                else if(data['message']=='You have been Verified'){
+                    localStorage.setItem('token',data['token'])
+                    localStorage.setItem('username',usernameData)
+                    window.location.href='user_profile_page.html'
+                }
+                }
+                );
     
-        }).then(res=>res.json())
-        .then(response=>{
-            if (response['message'] == 'You have been Verified' && usernameData=='super'){
-                alert(response['message'])
-                redirect:window.location.replace('../admin_dashboard.html')
-            token=response['token'];
-            localStorage.setItem('access-token',token);
-            localStorage.setItem('logged_in_user',usernameData);
-            }
-            else if (response['message'] == 'You have been Verified'){
-                alert(response['message'])
-                redirect:window.location.replace('../user_profile_page.html')
-            token=response['token'];
-            localStorage.setItem('access-token',token);
-            localStorage.setItem('logged_in_user',usernameData);
-            }
-            else{
-                alert(response['message'])
-                redirect:window.location.replace('../login.html')
-            };
-            
-}) }};
 
-
-
-
-
-
-
-
-
-
-
-
-
+    })
+    
+    }
 
 
 
