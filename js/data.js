@@ -42,3 +42,16 @@ const get=async(url,token)=>{
     return responseData
 
 }
+
+const put=async(url,token,updateData)=>{
+    const response=await fetch(url,{
+        'method':'PUT',
+        body:JSON.stringify(updateData),
+        'headers':{
+            'content-type':'application/json',
+            "Authorization":`Bearer ${token}` }
+    });
+
+    const responseData=await response.json()
+    return responseData
+}
