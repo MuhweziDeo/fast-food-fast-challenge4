@@ -19,7 +19,7 @@ const post= async(url,postData,token)=>{
         body:JSON.stringify(postData),
         headers:{
             'content-type':'application/json',
-            'Authorization':`${token}`
+            'Authorization':`Bearer ${token}`
         }
         
     });
@@ -27,4 +27,18 @@ const post= async(url,postData,token)=>{
     const responseData=await response.json()
     console.log(responseData)
     return responseData
+}
+
+
+const get=async(url,token)=>{
+    const response=await fetch(url,{
+        method:'GET',
+        headers:{
+            'Authorization':`Bearer ${token}`
+        }
+    });
+    const responseData=await response.json()
+    console.log(responseData)
+    return responseData
+
 }
