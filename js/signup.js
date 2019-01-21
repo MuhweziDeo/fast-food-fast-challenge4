@@ -14,6 +14,7 @@ window.onload=function signup(){
          
     post('https://fast-foods-api-main.herokuapp.com/api/v2/auth/signup',signUpData,'').then(
         data=>{
+            console.log(data['errors'].username)
             if(data['message']=='user created'){
                 responseDiv.innerHTML='Account created succesfully you can log in now'
                 setTimeout(function(){
@@ -29,6 +30,13 @@ window.onload=function signup(){
             else if(data['message']==`"passwords must match "`){
                 responseDiv.innerHTML='Oops passwords must match'
 
+            }
+            else if(data['errors'].username){
+                responseDiv.innerHTML=`username  ${data['errors'].username} `
+            }
+
+            else if(data['errors'].password){
+                responseDiv.innerHTML=`password is tooo short it should be atleast 6 characters `
             }
         }
     )
