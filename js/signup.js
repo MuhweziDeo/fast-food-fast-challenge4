@@ -10,11 +10,10 @@ window.onload=function signup(){
             username:usernameData,
         password:passwordData,
         confirm:confirmData
-    };
-         
-    post('https://fast-foods-api-main.herokuapp.com/api/v2/auth/signup',signUpData,'').then(
+    };   
+    post(`${baseUrl}auth/signup`,signUpData,'').then(
         data=>{
-            console.log(data['errors'].username)
+           
             if(data['message']=='user created'){
                 responseDiv.innerHTML='Account created succesfully you can log in now'
                 setTimeout(function(){

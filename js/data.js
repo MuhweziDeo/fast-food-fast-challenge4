@@ -13,6 +13,8 @@
 
 // }
 
+const baseUrl='https://fast-foods-api-main.herokuapp.com/api/v2/'
+
 const post= async(url,postData,token)=>{
     const response=await fetch(url,{
         method:'POST',

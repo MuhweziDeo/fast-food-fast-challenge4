@@ -2,7 +2,7 @@ let token=localStorage.getItem('token')
 let username=localStorage.getItem('username')
 let orders=document.getElementById('result');
 
-get('https://fast-foods-api-main.herokuapp.com/api/v2/orders',token).then(
+get(`${baseUrl}orders`,token).then(
     data=>{
         for(const[key,value] of Object.entries(data)){
             let ordersList=value;

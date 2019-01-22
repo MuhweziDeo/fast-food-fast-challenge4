@@ -8,7 +8,7 @@ window.onload=function login(){
         let passwordData=document.getElementById('password').value;      
         let loginData={username:usernameData,password:passwordData};
  
-                const loginResponse= post('https://fast-foods-api-main.herokuapp.com/api/v2/auth/login',loginData,'')
+                const loginResponse= post(`${baseUrl}auth/login`,loginData,'')
                 .then(data=>{ 
                 if(data['message']==`username ${usernameData} deosnt exist`){
                     msg.innerHTML=`username ${usernameData} deosnt exist`

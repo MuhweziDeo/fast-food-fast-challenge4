@@ -4,7 +4,7 @@ var username=localStorage.getItem('username')
 console.log(id)
 // var url=`https://fast-foods-api-main.herokuapp.com/api/v2/orders/${id}`
 
-get(`https://fast-foods-api-main.herokuapp.com/api/v2/orders/${id}`,token,).then(
+get(`${baseUrl}orders/${id}`,token,).then(
     data=>{
         for(const[key,value] of Object.entries(data)){
         let content=document.getElementById('order-details')
