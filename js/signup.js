@@ -1,33 +1,47 @@
-
 window.onload=function signup(){
-    document.getElementById('signup').addEventListener('submit', signup_user)
-    function signup_user(event){
-        event.preventDefault()
+        document.getElementById('signup').addEventListener('submit',signupUser=(e)=>{
+        e.preventDefault()
+        var responseDiv=document.getElementById('signup-info')
         var usernameData=document.getElementById('username').value;
         var passwordData=document.getElementById('password').value;
         var confirmData=document.getElementById('Confrim-password').value;
-        var loginData={
-            username:usernameData,
-            password:passwordData,
-            confirm:confirmData
-        };
-    
-        fetch('https://fast-foods-api-main.herokuapp.com/api/v2/auth/signup',{
-            method:'post',
-            headers:{
-                'content-Type':'application/json'
-            },
-            body:JSON.stringify(loginData)
-    
-        }).then(res=>res.json())
-        .then(response=>{
-            alert(response['message']);
-            if (response['message']=='user created'){
-            redirect:window.location.replace('../login.html')
-            }else{
-                redirect:window.location.replace('../signup.html')
-           
 
+        var signUpData={
+            username:usernameData,
+        password:passwordData,
+        confirm:confirmData
+    };   
+    post(`${baseUrl}auth/signup`,signUpData,'').then(
+        data=>{
+           
+            if(data['message']=='user created'){
+                responseDiv.innerHTML='Account created succesfully you can log in now'
+                setTimeout(function(){
+                     redirect:window.location.replace('../login.html')
+
+                },4000);
+            
+            }
+            else if(data['message']==`username ${usernameData} already taken`){
+                responseDiv.innerHTML='username already taken please choose a different one'
+
+            }
+            else if(data['message']==`"passwords must match "`){
+                responseDiv.innerHTML='Oops passwords must match'
+
+            }
+            else if(data['errors'].username){
+                responseDiv.innerHTML=`username  ${data['errors'].username} `
+            }
+
+            else if(data['errors'].password){
+                responseDiv.innerHTML=`password is tooo short it should be atleast 6 characters `
+            }
         }
-    });
-  }}
+    )
+        
+
+    })
+   
+}
+
